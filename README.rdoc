@@ -1,0 +1,1 @@
+I just wanted to save the block_mapper object somewhere, originally used in the open source OPAC, Blacklight.
