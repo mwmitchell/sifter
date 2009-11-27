@@ -1,3 +1,39 @@
+#
+# Example:
+#
+# summary = Mapper.new do
+#   
+#   def simplify val
+#     val.downcase.underscore.gsub(/\W+/, '').gsub(/ /, '').gsub(/\.xml/, '').gsub(/^ +| $/, '')
+#   end
+#   
+#   filter :language_facet do |all|
+#     all.map{|l| simplify l }
+#   end
+#   
+#   filter do |doc|
+#     doc.each_pair do |key,val|
+#       next if val.nil?
+#       val.is_a?(Array) ? val.map!{|v|v.strip} : doc[key]=val.strip
+#     end
+#   end
+#   
+#   var :title do |xml|
+#     xml.xpath('//archdesc[@level="collection"]/did/unittitle').first.text rescue
+#       xml.xpath('//archdesc/did/unittitle').first.text rescue
+#         'Untitled'
+#   end
+#   
+#   set :format_code_t, 'ead'
+#   
+# end
+# 
+# f = 'ead-example.xml'
+# doc = Nokogiri::XML(open(f))
+# summary.map doc.xpath('//eadheader') do |doc|
+#   # result...
+# end
+#
 class Mapper
   
   attr :block
