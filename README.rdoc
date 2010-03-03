@@ -1,0 +1,7 @@
+=Data 2 Hash Mapping Library
+
+==Example
+Checkout the example directory. The blacklight_sample.rb file is the main mapping code. marc_helpers.rb define re-usable modules/methods. To index, run this:
+  jruby index.rb
+
+Of course, you'll need marc, rsolr and rsolr-direct for jruby. You'll also need to change the path to your solr home.
