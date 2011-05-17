@@ -13,7 +13,7 @@ class BlacklightSample
   
   # an "after" event handler for each mapped hash.
   # this removes empty fields,
-  # and does strips all other values.
+  # and strips all other values.
   after { |mapped|
     mapped.each_pair { |field,value|
       mapped.delete field and next if value.to_s.empty?
